@@ -1,6 +1,6 @@
 <?php
 
-namespace Lia\Kernel\ThemeBundle;
+namespace Lia\ThemeBundle;
 
 use Lia\KernelBundle\Bundle\BundleBase;
 use Lia\ThemeBundle\DependencyInjection\CompilerPass;
