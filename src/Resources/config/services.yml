@@ -1,0 +1,7 @@
+parameters:
+    lia.service.theme.class: Lia\ThemeBundle\DependencyInjection\Service
+
+services:
+    lia.service.theme:
+        class: %lia.service.theme.class%
+        arguments: [@service_container]

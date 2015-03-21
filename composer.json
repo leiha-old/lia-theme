@@ -1,0 +1,29 @@
+{
+  "name": "lia/theme",
+  "description": "Lia Framework : Theme",
+  "homepage": "https://github.com/leiha/lia-theme/",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "Leiha Sellier",
+      "email": "leiha.sellier@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": { "Lia\\ThemeBundle\\": "src/" }
+  },
+  "repositories": [
+    {
+	"type": "vcs",
+        "url": "https://github.com/leiha/lia-kernel.git"
+    }
+  ],
+  "require": {
+        "lia/kernel": "dev-master@dev"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.0.x-dev"
+    }
+  }
+}
