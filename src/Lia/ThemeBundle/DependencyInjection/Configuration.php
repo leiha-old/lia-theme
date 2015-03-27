@@ -20,11 +20,19 @@ class Configuration
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('lia_kernel_theme');
+        $rootNode = $treeBuilder->root('lia_theme');
+
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('root_url')
+                    ->defaultValue('/')
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

@@ -98,8 +98,12 @@ class Service
      */
     private function render(CollectionBag $bag)
     {
+        $webPath = $this->config->get('root_url');
         return $bag->iterate(function(AssetBag $bag, $path)
+            use($webPath)
         {
+            $path = $webPath.$path;
+
             $ret = $bag->styleSheet->files->iterate(
                 function($item) use ($path) {
                     return "\n".'<link rel="stylesheet" href="'.$path.$item.'" />';

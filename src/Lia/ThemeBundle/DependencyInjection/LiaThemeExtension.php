@@ -28,5 +28,8 @@ class LiaThemeExtension
             new FileLocator(__DIR__.'/../Resources/config')
         );
         $loader->load('services.yml');
+
+        $resourceDefinition = $container->getDefinition('lia.service.theme');
+        $resourceDefinition->addMethodCall('setConfiguration', array($config));
     }
 }
