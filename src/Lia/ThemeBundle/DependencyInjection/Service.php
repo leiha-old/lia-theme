@@ -31,9 +31,8 @@ class Service
     /**
      * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct()
     {
-        parent::__construct($container);
         $this->assetsTop    = new CollectionBag();
         $this->assetsBottom = new CollectionBag();
         $this->subscribers  = new CollectionBag();

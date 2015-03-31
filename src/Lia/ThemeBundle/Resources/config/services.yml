@@ -4,4 +4,5 @@ parameters:
 services:
     lia.service.theme:
         class: %lia.service.theme.class%
-        arguments: [@service_container]
+        calls:
+            - ['setContainer', [@service_container]]
