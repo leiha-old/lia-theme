@@ -1,7 +1,7 @@
 This Bundle can be used for the management of assets in symfony.
 
 # How to works ?
-A service theme is registered in the DIC. He allows the others services with the tag "lia.subscriber.theme" to subscribe himself.
+A service theme is registered in the DIC. He allows the others services with the tag "lia.subscriber.theme" to subscribe himself. [See here for more explanation of the services in symfony](http://symfony.com/doc/current/components/dependency_injection/index.html)
 
 # Implementation
 
