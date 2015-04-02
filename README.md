@@ -4,9 +4,28 @@ This Bundle can be used for the management of assets in symfony.
 A service theme is registered in the DIC. He allows the others services with the tag "lia.subscriber.theme" to subscribe himself.
 
 # Implementation
-Creates a file : **[BUNDLE]/DependencyInjection/ThemeSubscriberAutoService.php** 
-and put inside :
 
+## base.html.twig 
+Modify the file :
+```twig
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ lia_get('lia.service.theme').renderTop() }}
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {{ lia_get('lia.service.theme')->renderBottom() }}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+```
+## ThemeSubscriberAutoService.php
+Creates a file : **[BUNDLE]/DependencyInjection/ThemeSubscriberAutoService.php** 
 ```php
     
     namespace [BUNDLE]\DependencyInjection;
