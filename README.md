@@ -5,17 +5,28 @@ A service theme is registered in the DIC. He allows the others services with the
 
 # Implementation
 
-## base.html.twig 
-Modify the file :
+## 1°) app/AppKernel.php
+```php 
+public function registerBundles()
+{
+    $bundles = array(
+        ...
+        new Lia\KernelBundle\LiaKernelBundle(),
+        new Lia\ThemeBundle\LiaThemeBundle(),
+        ...
+    );
+}
+```
+
+## 2°) app/Resources/views/base.html.twig 
 ```twig
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        ...
         {{ lia_get('lia.service.theme').renderTop() }}
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        ...
     </head>
     <body>
         {% block body %}{% endblock %}
@@ -24,7 +35,7 @@ Modify the file :
     </body>
 </html>
 ```
-## ThemeSubscriberAutoService.php
+## 3°) ThemeSubscriberAutoService.php
 Creates a file : **[BUNDLE]/DependencyInjection/ThemeSubscriberAutoService.php** 
 ```php
     
